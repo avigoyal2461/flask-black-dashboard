@@ -1,5 +1,12 @@
 type = ['primary', 'info', 'success', 'warning', 'danger'];
 
+$(document).ready(function () {
+    $.get('/processes', function (data) {
+        $.each(data, function (index, process) {
+            console.log(process)
+        });
+    });
+});
 demo = {
   initPickColor: function() {
     $('.pick-class-label').click(function() {
@@ -422,7 +429,7 @@ demo = {
     });
 
 
-
+    //TOP TABLE //Total Transactions
     var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 

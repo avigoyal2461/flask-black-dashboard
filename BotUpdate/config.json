@@ -1,0 +1,22 @@
+{
+    "DEV": {
+        "username": "rpa_bot_user",
+        "password": "$olarPower2021",
+        "server": "trinitysolartest.database.windows.net",
+        "database": "Trinity Solar"
+    },
+    "PROD":
+    {
+        "username": "rpa_bot_user",
+        "password": "$olarPower2021",
+        "server": "trinitysolarprod.database.windows.net",
+        "database": "TS_Prod_DB"
+    },
+    "UAT": 
+    {
+      "username": "rpa_bot_user",
+      "password": "$olarPower2021",
+      "server": "trinitysolartest.database.windows.net",
+      "database": "TS_Test_DB"
+    }
+}

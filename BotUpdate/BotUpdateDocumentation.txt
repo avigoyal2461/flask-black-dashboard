@@ -1,0 +1,37 @@
+New Bot statuses...
+
+Starting off - 
+>From ProcessTable import RPA_ProcessTable
+
+>self.bot_update = RPA_ProcessTable()
+
+>self.bot_update.register_bot(BOT_NAME, process_description=None, is_continuous=None, active_ind=None, logs="In Queue: x")
+Register a bot/kick off process:
+These fields are not needed: process_description, is_continuous, active_ind, logs (Logs will be the queue size, for our bots we should register the bot with a size -> In Queue: x)
+
+
+>self.bot_update.update_status(BOT_NAME)
+Update Status:
+To only Update status
+
+
+>self.bot_update.update_bot_status(BOT_NAME, status="Status Here", identifier=OpportunityID)
+Update Status and create a detail item: **Explanation at bottom
+This will update the status along with creating / updating an opportunity that the bot is working on 
+As you are updating the bot through this process then this is the format to use
+
+
+>self.bot_update.complete_opportunity(bot_name, opportunityid)
+To close an opportunity: **Explanation at bottom
+This will mark the opportunity as finished, it will save the process id, run id, and the opportunity
+
+
+>self.bot_update.edit_end()
+To end a process:
+This will mark the process as finished 
+
+
+
+** explanation for process detail 
+when this creates an item, it will check the table - if the value already exists then it will return True, this can be used for duplicate checking or passed over, but when True is returned the value is NOT created in the table
+if the value is NOT marked as complete, it will NOT be seen as a duplicate 

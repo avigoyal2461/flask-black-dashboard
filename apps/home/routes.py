@@ -4,7 +4,8 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from apps.home import blueprint
-from flask import render_template, request
+from BotUpdate.ProcessTable import RPA_Process_Table
+from flask import render_template, request, jsonify
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 
@@ -52,3 +53,13 @@ def get_segment(request):
 
     except:
         return None
+
+#get data from Table
+@blueprint.route('/<processes>')
+def get_process(request):
+    print("?")
+    process_table = RPA_Process_Table()
+    df = process_table.Select_All()
+    data = df.to_dict('records')
+
+    return jsonify(data)
