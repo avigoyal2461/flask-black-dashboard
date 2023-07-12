@@ -53,7 +53,7 @@ def get_segment(request):
 
     except:
         return None
-
+"""
 #get data from Table
 @blueprint.route('/<processes>')
 def get_process(request):
@@ -63,3 +63,4 @@ def get_process(request):
     data = df.to_dict('records')
 
     return jsonify(data)
+"""

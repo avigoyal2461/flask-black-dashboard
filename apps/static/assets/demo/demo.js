@@ -1,7 +1,8 @@
 type = ['primary', 'info', 'success', 'warning', 'danger'];
-
+var bot_data; //declare bot data
 $(document).ready(function () {
-    $.get('/processes', function (data) {
+    $.get('http://' + IPADDRESS + '/processes', function (data) {
+        bot_data = data; //assign global bot data to data function
         $.each(data, function (index, process) {
             console.log(process)
         });
